@@ -4,6 +4,10 @@
   html {
     scroll-behavior: smooth;
   }
+
+  body {
+    overflow-x: hidden;
+  }
   
   /* Custom Scrollbar for modern look */
   ::-webkit-scrollbar {
@@ -71,4 +75,36 @@
 @keyframes zoomIn {
   from { transform: scale(0.95); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
+}
+
+/* ── Global Accessibility Modes ───────────────────────────────────────────── */
+
+html.accessibility-large-text {
+  font-size: 120%;
+}
+
+html.accessibility-high-contrast body,
+html.accessibility-high-contrast #root {
+  background: #000 !important;
+  color: #fff !important;
+}
+html.accessibility-high-contrast .bg-white,
+html.accessibility-high-contrast .bg-slate-50,
+html.accessibility-high-contrast .bg-slate-100 {
+  background-color: #111 !important;
+  border-color: #fff !important;
+}
+html.accessibility-high-contrast p,
+html.accessibility-high-contrast span,
+html.accessibility-high-contrast h3,
+html.accessibility-high-contrast h4 {
+  color: #fff !important;
+}
+html.accessibility-high-contrast .text-slate-400,
+html.accessibility-high-contrast .text-slate-500,
+html.accessibility-high-contrast .text-gray-500 {
+  color: #ccc !important;
+}
+html.accessibility-high-contrast button:not([disabled]) {
+  border: 2px solid #fff !important;
 }
